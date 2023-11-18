@@ -1,0 +1,46 @@
+.container {
+
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: left;
+    margin-top: 150px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+
+.input {
+    display: block;
+    margin: 20px 0;
+    width: 400px;
+    padding:10px;
+    font-family:inherit;
+    font-size: inherit;
+  border-radius: 20px;
+  border: 2px solid #c9c5c5;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: bold;
+
+}
+
+.button {
+    width: 150px;
+    padding: 10px;
+    color: #fff;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #f32525;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+
+    background-color: #f54242;
+
+}

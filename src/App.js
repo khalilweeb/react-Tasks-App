@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import TaskesElemets from './components/TaskesElements';
+import InputBox from './components/inputBox';
 
 function App() {
+  const [tasks , setTasks] = useState(['khalil',]);
+  const [task, setTask] = useState('');
+
+  const inputChangeHandler = e => {
+    setTask([e.target.value]);
+    console.log('change');
+  }
+
+  const clickHandler = () => {
+    setTasks([...tasks, task]);
+    console.log('click');
+  } 
+
+  const deleteHandler = (ele) => {
+    setTasks(
+      tasks.filter(e => e !== ele.target.value)
+
+    )
+
+    console.log("delete click");
+  }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputBox    click={clickHandler} changeHandler={e => inputChangeHandler(e)}/>
+      <TaskesElemets tasks={tasks}
+      click={deleteHandler}
+   />
     </div>
   );
 }
